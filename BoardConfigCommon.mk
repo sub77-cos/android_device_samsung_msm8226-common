@@ -110,6 +110,9 @@ endif
  
 BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
 
+# Sensors
+TARGET_NO_SENSOR_PERMISSION_CHECK := true
+
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
 BOARD_HAS_QCOM_WLAN_SDK          := true
