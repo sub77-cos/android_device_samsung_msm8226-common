@@ -74,9 +74,6 @@ TARGET_QCOM_NO_FM_FIRMWARE := true
 # Fonts
 EXTENDED_FONT_FOOTPRINT := true
 
-# Init
-TARGET_INIT_VENDOR_LIB := libinit_msm
-
 # Memory
 MALLOC_IMPL := dlmalloc
 
