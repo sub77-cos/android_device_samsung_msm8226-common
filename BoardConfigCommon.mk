@@ -75,7 +75,7 @@ TARGET_QCOM_NO_FM_FIRMWARE := true
 EXTENDED_FONT_FOOTPRINT := true
 
 # Memory
-MALLOC_IMPL := dlmalloc
+MALLOC_SVELTE := true
 
 # Partitions and Vold
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
