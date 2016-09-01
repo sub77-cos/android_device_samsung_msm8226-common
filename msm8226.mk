@@ -26,27 +26,27 @@ TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 
 # Audio
-PRODUCT_PACKAGES += \
-    audiod \
-    audio.a2dp.default \
-    audio.primary.msm8226 \
-    audio.r_submix.default \
-    audio.usb.default
+#PRODUCT_PACKAGES += \
+    #audiod \
+    #audio.a2dp.default \
+    #audio.primary.msm8226 \
+    #audio.r_submix.default \
+    #audio.usb.default
 
-PRODUCT_PACKAGES += \
-    libaudio-resampler \
-    libqcompostprocbundle \
-    libqcomvisualizer \
-    libqcomvoiceprocessing \
-    tinymix
+#PRODUCT_PACKAGES += \
+    #libaudio-resampler \
+    #libqcompostprocbundle \
+    #libqcomvisualizer \
+    #libqcomvoiceprocessing \
+    #tinymix
 
 # Camera
-PRODUCT_PACKAGES += \
-    camera.msm8226 \
-    libboringssl-compat \
-    libstlport \
-    libxml2 \
-    Snap
+#PRODUCT_PACKAGES += \
+    #camera.msm8226 \
+    #libboringssl-compat \
+    #libstlport \
+    #libxml2 \
+    #Snap
 
 # CRDA
 PRODUCT_PACKAGES += \
