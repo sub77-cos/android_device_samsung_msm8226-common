@@ -64,6 +64,3 @@ persist.timed.enable=true
 # Wi-Fi
 ro.disableWifiApFirmwareReload=true
 wifi.interface=wlan0
-
-# Misc
-ro.sdcardfs.enable=true
