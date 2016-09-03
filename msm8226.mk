@@ -41,11 +41,11 @@ TARGET_SCREEN_WIDTH := 720
     #tinymix
 
 # Camera
-#PRODUCT_PACKAGES += \
-    #camera.msm8226 \
-    #libboringssl-compat \
-    #libstlport \
-    #libxml2 \
+PRODUCT_PACKAGES += \
+    camera.msm8226 \
+    libboringssl-compat \
+    libstlport \
+    libxml2 \
     #Snap
 
 # CRDA
