@@ -48,7 +48,7 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_SHOW_PERCENTAGE := true
 
 # CMHW
-#BOARD_HARDWARE_CLASS += $(VENDOR_PATH)/cmhw
+BOARD_HARDWARE_CLASS += $(VENDOR_PATH)/cmhw
 
 # Custom RIL class
 BOARD_RIL_CLASS := ../../../$(VENDOR_PATH)/ril
@@ -88,6 +88,9 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno305
 
 # Properties (reset them here, include more in device if needed)
 TARGET_SYSTEM_PROP := $(VENDOR_PATH)/system.prop
+
+ # Crypto
+TARGET_HW_DISK_ENCRYPTION := false
 
 # Basic dexpreopt
 #ifeq ($(HOST_OS),linux)
