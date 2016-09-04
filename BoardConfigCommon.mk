@@ -52,7 +52,7 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_SHOW_PERCENTAGE := true
 
 # CMHW
-#BOARD_HARDWARE_CLASS += $(VENDOR_PATH)/cmhw
+BOARD_HARDWARE_CLASS += $(VENDOR_PATH)/cmhw
 
 # Custom RIL class
 BOARD_RIL_CLASS := ../../../$(VENDOR_PATH)/ril
@@ -97,18 +97,18 @@ TARGET_SYSTEM_PROP := $(VENDOR_PATH)/system.prop
 TARGET_HW_DISK_ENCRYPTION := false
 
 # Basic dexpreopt
-#ifeq ($(HOST_OS),linux)
-  #ifneq ($(TARGET_BUILD_VARIANT),eng)
-   # ifeq ($(WITH_DEXPREOPT),)
-    #  WITH_DEXPREOPT := true
-      #WITH_DEXPREOPT_BOOT_IMG_ONLY := true
-    #endif
-  #endif
-#endif
+ifeq ($(HOST_OS),linux)
+  ifneq ($(TARGET_BUILD_VARIANT),eng)
+    ifeq ($(WITH_DEXPREOPT),)
+      WITH_DEXPREOPT := true
+      WITH_DEXPREOPT_BOOT_IMG_ONLY := true
+    endif
+  endif
+endif
 
 # SELinux
-#-include device/qcom/sepolicy/sepolicy.mk
-#BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
+-include device/qcom/sepolicy/sepolicy.mk
+BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
 
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
