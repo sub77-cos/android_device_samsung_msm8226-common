@@ -115,7 +115,7 @@ static char *camera_fixup_getparams(int id, const char *settings)
 #endif
 
     // fix params here
-    params.set(android::CameraParameters::KEY_SUPPORTED_ISO_MODES, iso_values[id]);
+    params.set(android::CameraParameters::KEY_SUPPORTED_FLASH_MODES, iso_values[id]);
     params.set(android::CameraParameters::KEY_EXPOSURE_COMPENSATION_STEP, "0.5");
     params.set(android::CameraParameters::KEY_MIN_EXPOSURE_COMPENSATION, "-4");
     params.set(android::CameraParameters::KEY_MAX_EXPOSURE_COMPENSATION, "4");
@@ -158,13 +158,6 @@ static char *camera_fixup_setparams(struct camera_device *device, const char *se
 
     const char *recordingHint = params.get(android::CameraParameters::KEY_RECORDING_HINT);
     bool isVideo = recordingHint && !strcmp(recordingHint, "true");
-
-    if (isVideo) {
-        params.set(android::CameraParameters::KEY_DIS, android::CameraParameters::DIS_DISABLE);
-        params.set(android::CameraParameters::KEY_ZSL, android::CameraParameters::ZSL_OFF);
-    } else {
-        params.set(android::CameraParameters::KEY_ZSL, android::CameraParameters::ZSL_ON);
-    }
 
     // fix params here
     // No need to fix-up ISO_HJR, it is the same for userspace and the camera lib
