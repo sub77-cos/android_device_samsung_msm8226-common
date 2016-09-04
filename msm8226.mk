@@ -73,6 +73,10 @@ PRODUCT_PACKAGES += \
     FMRadio \
     libfmjni
 
+# GPS
+PRODUCT_PACKAGES += \
+    gps.msm8226
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/flp.conf:system/etc/flp.conf \
     $(LOCAL_PATH)/gps/gps.conf:system/etc/gps.conf \

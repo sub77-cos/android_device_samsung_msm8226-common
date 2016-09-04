@@ -75,8 +75,19 @@ TARGET_QCOM_NO_FM_FIRMWARE := true
 # Fonts
 EXTENDED_FONT_FOOTPRINT := true
 
+<<<<<<< HEAD
 # Memory
 MALLOC_SVELTE := true
+=======
+# GPS
+TARGET_GPS_HAL_PATH := $(VENDOR_PATH)/gps
+
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_msm
+
+# Kernel
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
+>>>>>>> parent of 91c22bd... msm8226: Switch to proprietary GPS blobs
 
 # Partitions and Vold
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
