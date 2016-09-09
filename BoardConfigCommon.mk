@@ -28,7 +28,7 @@ AUDIO_FEATURE_ENABLED_LOW_LATENCY_CAPTURE := true
 BOARD_USES_ALSA_AUDIO := true
 
 # GPS		
-TARGET_GPS_HAL_PATH := $(VENDOR_PATH)/gps		
+#TARGET_GPS_HAL_PATH := $(VENDOR_PATH)/gps		
  
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -94,17 +94,17 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno305
 TARGET_SYSTEM_PROP := $(VENDOR_PATH)/system.prop
 
  # Crypto
-TARGET_HW_DISK_ENCRYPTION := false
+#TARGET_HW_DISK_ENCRYPTION := false
 
 # Basic dexpreopt
-ifeq ($(HOST_OS),linux)
-  ifneq ($(TARGET_BUILD_VARIANT),eng)
-    ifeq ($(WITH_DEXPREOPT),)
-      WITH_DEXPREOPT := true
-      WITH_DEXPREOPT_BOOT_IMG_ONLY := true
-    endif
-  endif
-endif
+#ifeq ($(HOST_OS),linux)
+ # ifneq ($(TARGET_BUILD_VARIANT),eng)
+ #   ifeq ($(WITH_DEXPREOPT),)
+ #     WITH_DEXPREOPT := true
+ #     WITH_DEXPREOPT_BOOT_IMG_ONLY := true
+ #   endif
+ # endif
+#endif
 
 # SELinux
 #-include device/qcom/sepolicy/sepolicy.mk
