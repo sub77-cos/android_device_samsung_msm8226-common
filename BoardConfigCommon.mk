@@ -27,8 +27,8 @@ TARGET_CPU_VARIANT := krait
 AUDIO_FEATURE_ENABLED_LOW_LATENCY_CAPTURE := true
 BOARD_USES_ALSA_AUDIO := true
 
-# GPS		
-TARGET_GPS_HAL_PATH := $(VENDOR_PATH)/gps		
+# GPS
+TARGET_GPS_HAL_PATH := $(VENDOR_PATH)/gps
  
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -42,6 +42,7 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8226
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_NEEDS_TEXT_RELOCATIONS := true
+TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 
 # Charger
 BOARD_BATTERY_DEVICE_NAME := "battery"
@@ -108,16 +109,16 @@ endif
 BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
 
 # Wifi
-BOARD_HAVE_SAMSUNG_WIFI := true
-BOARD_WLAN_DEVICE := bcmdhd
+BOARD_HAS_QCOM_WLAN := true
+BOARD_HAS_QCOM_WLAN_SDK := true
+BOARD_WLAN_DEVICE := qcwcn
 BOARD_HOSTAPD_DRIVER := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+TARGET_PROVIDES_WCNSS_QMI := true
+TARGET_USES_QCOM_WCNSS_QMI := true
+TARGET_USES_WCNSS_CTRL := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
-WIFI_BAND := 802_11_ABG
-WIFI_DRIVER_MODULE_ARG      := "firmware_path=/system/etc/wifi/bcmdhd_sta.bin nvram_path=/system/etc/wifi/nvram_net.txt"
-WIFI_DRIVER_MODULE_AP_ARG   := "firmware_path=/system/etc/wifi/bcmdhd_apsta.bin nvram_path=/system/etc/wifi/nvram_net.txt"
-WIFI_DRIVER_FW_PATH_PARAM   := "/sys/module/dhd/parameters/firmware_path"
-WIFI_DRIVER_FW_PATH_STA     := "/system/etc/wifi/bcmdhd_sta.bin"
-WIFI_DRIVER_FW_PATH_AP      := "/system/etc/wifi/bcmdhd_apsta.bin"
+WIFI_DRIVER_FW_PATH_STA := "sta"
+WIFI_DRIVER_FW_PATH_AP := "ap"

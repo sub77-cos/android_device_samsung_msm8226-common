@@ -34,11 +34,15 @@ ro.gps.agps_provider=1
 ro.qc.sdk.izat.premium_enabled=0
 ro.qc.sdk.izat.service_mask=0x0
 
+# Media
+media.stagefright.legacyencoder=true
+media.stagefright.less-secure=true
+
 # IO Scheduler
 sys.io.scheduler=bfq
 
-# Perf
-ro.vendor.extension_library=/vendor/lib/libqc-opt.so
+# QC Perf
+ro.vendor.extension_library=libqti-perfd-client.so
 
 # Radio
 persist.data.netmgrd.qos.enable=false
@@ -66,4 +70,4 @@ ro.disableWifiApFirmwareReload=true
 wifi.interface=wlan0
 
 # Misc
-ro.sys.sdcardfs=true
+ro.sys.sdcardfs=false

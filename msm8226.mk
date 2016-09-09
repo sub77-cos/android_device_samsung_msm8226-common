@@ -29,6 +29,10 @@ TARGET_SCREEN_WIDTH := 720
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/adbkey.pub:root/adb_keys
 
+# set default USB configuration
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=adb
+
 # Audio
 PRODUCT_PACKAGES += \
     audiod \
@@ -50,8 +54,7 @@ PRODUCT_PACKAGES += \
     libboringssl-compat \
     libstlport \
     libxml2 \
-    Snap \
-    Camera2
+    Camera
 
 # CRDA
 PRODUCT_PACKAGES += \
@@ -160,15 +163,29 @@ PRODUCT_PACKAGES += \
 # Wifi
 PRODUCT_PACKAGES += \
     hostapd \
+    hostapd.accept \
+    hostapd.deny \
+    hostapd_default.conf \
     wpa_supplicant \
-    wpa_supplicant.conf
+    wpa_supplicant.conf \
+    p2p_supplicant_overlay.conf \
+    wpa_supplicant_overlay.conf
 
 PRODUCT_PACKAGES += \
-    libcurl \
     libqsap_sdk \
     libQWiFiSoftApCfg \
     libwcnss_qmi \
     wcnss_service
+
+PRODUCT_PACKAGES += \
+    WCNSS_cfg.dat \
+    WCNSS_qcom_cfg.ini \
+    WCNSS_qcom_wlan_nv.bin \
+    WCNSS_qcom_wlan_factory_nv.bin
+
+PRODUCT_PACKAGES += \
+    libcurl \
+    tcpdump
 
 # Inherit from qcom-common
 $(call inherit-product, device/samsung/qcom-common/qcom-common.mk)
