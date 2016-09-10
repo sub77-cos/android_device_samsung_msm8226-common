@@ -78,9 +78,6 @@ TARGET_QCOM_NO_FM_FIRMWARE := true
 # Fonts
 EXTENDED_FONT_FOOTPRINT := true
 
-# Memory
-MALLOC_SVELTE := true
-
 # Partitions and Vold
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -93,22 +90,23 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno305
 # Properties (reset them here, include more in device if needed)
 TARGET_SYSTEM_PROP := $(VENDOR_PATH)/system.prop
 
- # Crypto
-#TARGET_HW_DISK_ENCRYPTION := false
+# Crypto
+TARGET_HW_DISK_ENCRYPTION := false
 
 # Basic dexpreopt
-#ifeq ($(HOST_OS),linux)
- # ifneq ($(TARGET_BUILD_VARIANT),eng)
- #   ifeq ($(WITH_DEXPREOPT),)
- #     WITH_DEXPREOPT := true
- #     WITH_DEXPREOPT_BOOT_IMG_ONLY := true
- #   endif
- # endif
-#endif
+ifeq ($(HOST_OS),linux)
+  ifneq ($(TARGET_BUILD_VARIANT),eng)
+    ifeq ($(WITH_DEXPREOPT),)
+      WITH_DEXPREOPT := true
+      WITH_DEXPREOPT_BOOT_IMG_ONLY := true
+    endif
+  endif
+endif
 
 # SELinux
-#-include device/qcom/sepolicy/sepolicy.mk
-#BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
+-include device/qcom/sepolicy/sepolicy.mk
+ 
+BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
 
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
