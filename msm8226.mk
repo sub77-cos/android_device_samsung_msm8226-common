@@ -26,14 +26,14 @@ TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 
 # Audio
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     audiod \
     audio.a2dp.default \
     audio.primary.msm8226 \
     audio.r_submix.default \
     audio.usb.default
 
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     libaudio-resampler \
     libqcompostprocbundle \
     libqcomvisualizer \
