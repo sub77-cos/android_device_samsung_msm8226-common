@@ -25,6 +25,10 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 
+# ADB
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/adbkey.pub:root/adb_keys
+
 # Audio
 PRODUCT_PACKAGES += \
     audiod \
