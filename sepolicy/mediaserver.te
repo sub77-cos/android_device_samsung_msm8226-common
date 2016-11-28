@@ -4,4 +4,5 @@ allow mediaserver socket_device:sock_file write;
 allow mediaserver sysfs_camera:dir search;
 allow mediaserver sysfs_camera:file { getattr open read };
 #allow mediaserver system_file:file execmod;
-
+allow mediaserver camera_prop:property_service set;
+allow mediaserver system_data_file:sock_file write;
