@@ -51,8 +51,6 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8226 \
-    libboringssl-compat \
-    libstlport \
     libxml2 \
     Camera
 
@@ -145,10 +143,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     power.msm8226
 
-# Radio
-PRODUCT_PACKAGES += \
-    libril_shim
-
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.qcom.bt.sh
@@ -186,6 +180,19 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcurl \
     tcpdump
+
+# SSH
+PRODUCT_PACKAGES += \
+    libcurl \
+	libssh \
+	ssh \
+	sftp \
+	scp \
+	sshd \
+	ssh-keygen \
+	sshd_config \
+	start-ssh
+    
 
 # Inherit from qcom-common
 $(call inherit-product, device/samsung/qcom-common/qcom-common.mk)
