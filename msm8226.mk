@@ -143,6 +143,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     power.msm8226
 
+# Radio
+PRODUCT_PACKAGES += \
+    libril_shim \
+    libstlport
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.qcom.bt.sh
